@@ -1,7 +1,9 @@
-import cv2 as cv
+from scipy import io as spio
 import numpy as np
-import matplotlib.pyplot as plt
 
+a = np.ones((3, 3))
+spio.savemat('f.mat', {'a': a})
+data = spio.loadmat('f.mat', struct_as_record=True)
+data['a']
 
-print(cv.getVersionString())
-print('dd')
+#测试terminal
